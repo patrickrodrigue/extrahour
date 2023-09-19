@@ -5,19 +5,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="index.js" defer></script>
+    <title>SomarHoras</title>
     <link rel="stylesheet" href="style.css">
-
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src=https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js>
+</script>
 </head>
-
 <body>
+    <div class="logo">
+        <img src="img/imglogo.png" alt="">
+    </div>
     <div class="container">
-    <input type="number" id="wage" placeholder="Salário" >
-    <input type="number" id="hour" placeholder="Horas">
-    <button id= "start" onclick="calcular()">Calcular</button>
-   <p id="arearesult"> <span id="result">0,00</span> R$</p>
-</div>
+        <br>
+        <label for="wage" class=>Salário:</label><br>
+        <input type="text" id="wage" class="barra" placeholder="R$0.000,00" onkeyup="formatCurrency(this)"><br>
+        <label for="hour" >Horas:</label><br>
+        <input type="text" id="hour" class="barra" placeholder="00:00">
+        <p id="arearesult"><span id="result">R$ 0,00</span> </p>
+        <button id="calcular" onclick="calcular()">Calcular</button>
+    </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#wage').mask("#.##0,00", { reverse: true });
+            $('#hour').mask('00:00:00');
+        });
+
+        function calcular() {
+            var salario = parseFloat($('#wage').val().replace(/[^\d]/g, '')) / 100;
+
+            
+            var hora = $('#hour').val();
+            
+            var partesHora = hora.split(":");
+            var horas = parseInt(partesHora[0]);
+            var minutos = parseInt(partesHora[1]);
+
+            var tempoTotalEmMinutos = horas * 60 + minutos;
+            
+            var soma = salario /30 / 8 * 2;
+            var result = soma * tempoTotalEmMinutos / 60;
+
+            document.getElementById("result").innerHTML = 'Total a ser Pago: R$ ' + result.toFixed(2);
+        }
+
+
+</script>
 </body>
 
 </html>

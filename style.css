@@ -1,48 +1,41 @@
-body{
-    background-color: rgb(37, 37, 37);
-}
-.container{
-    width: 14em;
-    height: 15em;
-    background-color: rgb(66, 110, 96);
-    flex-wrap: wrap;
-    border-radius: 20px;
-    
+body {
+    background:#0341d37e;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    
-   }
-   .container:hover{
-    transition: transform 0.1s;
-    transform: scale(1.01);
-    }
-    
-  
-   
-#wage{
-    position: relative;
-    top: 2em;
-    height: 25px;
-    left: 25px;
-    background-color: rgb(144, 204, 204);
-   border: none;
-   border-radius:5px ;
-   box-shadow: 0 0 0 0;
-   outline: 0;
+    height: 100vh;
+    margin: 0;
 }
 
-#hour{
+.logo, .container {
+    text-align: center;
+    margin: 20px; /* Adicione margem entre a logo e o container, se desejado */
+}
+
+.logo img {
+    width: 650px;
+    height: 350px;
     position: relative;
-    top: 0em;
-    height: 25px;
-    background-color: rgb(144, 204, 204);
-    border: none;
-    left: 25px;
-    border-radius: 5px;
-    box-shadow: 0 0 0 0;
-    outline: 0;
- }
+    top: 10em;
+    opacity: 30%;
+}
+.container{
+    width: 400px;
+    height: 320px;
+    background-color: rgba(31, 30, 94, 0.541);
+    position: relative;
+    top: -13em;
+    border-radius: 20px;
+}
+.container label{
+    color: rgb(234, 235, 154);
+    font-size: 24PX;
+}
+.container:hover {
+    transition: transform 0.1s;
+    transform: scale(1.01);
+}
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -53,29 +46,31 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
-
-
-#start{
+.barra{
+    width: 70%;
+    height: 20px;
+    background-color: rgba(226, 226, 236, 0.767);
+    border-color:transparent;
+}
+.barra:focus {
+    background-color: #ffffffe1;
+    outline: none;
+}
+.barra::placeholder {
+    color: #000000; /* Defina a cor que deseja para o placeholder */
+}
+#calcular {
     position: relative;
-    top: -3em;
-    left: 6em;
+    top: 3em; 
+    height: 2em;
     border-radius: 5px;
-    background-color: rgb(133, 133, 161);
-    color: rgb(17, 39, 58);
-   border-color: rgb(59, 56, 80);
-    
-}#start:hover{
+    background-color: rgb(45, 45, 97);
+    color: rgb(234, 235, 154);
+    border-color: rgb(59, 56, 80);
+    width: 100%;
+
+}
+
+#calcular:hover {
     cursor: pointer;
-}
-
-p{
-    position: relative;
-}
-#textarea{
-    position: relative;
-    width: 3em;
-    top: -200px;
-    height: 10px;
-    top: 20px;
-
 }
