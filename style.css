@@ -74,3 +74,6 @@ input[type="number"] {
 #calcular:hover {
     cursor: pointer;
 }
+#result{
+    color: white;
+}
